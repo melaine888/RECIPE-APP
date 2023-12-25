@@ -12,7 +12,8 @@ def create_app(config):
     app= Flask(__name__)
     app.config.from_object(config)
 
-    db.init_app(app)
+    db.init_app(app) #bind database operations to the flask app
+    
     api = Api(app,doc = '/docs')
     
     api.add_namespace(recipe_ns)

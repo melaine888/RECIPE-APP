@@ -1,5 +1,14 @@
 from exts import db
 
+#recipe model
+
+"""
+class Recipe:
+    id:Int
+    title: String
+    description: String
+"""
+
 class Recipe(db.Model):
     id = db.Column(db.Integer(),primary_key = True)
     title = db.Column(db.String(),nullable = False)
@@ -22,6 +31,17 @@ class Recipe(db.Model):
         
         db.session.commit()
         
+
+#user model
+        
+"""
+class User:
+    id:integer
+    username:string
+    email:string
+    password:string
+"""
+        
 class User(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(25),nullable = False,unique = True )
@@ -29,6 +49,8 @@ class User(db.Model):
     password = db.Column(db.String,nullable = False)
     
     def __repr__(self):
+        
+        # returns string representation of object. Human readable representation of obj
         return f"<User {self.username}"
     
     def save(self):
