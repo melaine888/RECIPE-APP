@@ -27,7 +27,7 @@ class RecipeResource(Resource):
     
     @recipe_ns.marshal_list_with(recipe_model)
     def get(self):
-        """get all recipes"""
+        """Get all recipes"""
         
         recipes = Recipe.query.all() 
         
